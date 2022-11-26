@@ -31,7 +31,6 @@
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:maxLines="2"
                 android:ellipsize="end"
                 android:text="Header" />
 

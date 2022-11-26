@@ -9,7 +9,7 @@ import java.io.Serializable
 
 
 @Entity(tableName = "news")
-class entity(@ColumnInfo(name = "title") var title:String
+class Entity(@ColumnInfo(name = "title") var title:String
              , @ColumnInfo(name = "selftext")var selftext:String
              , @ColumnInfo(name = "icon_url") var icon_url:String)
 {

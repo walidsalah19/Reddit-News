@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import com.example.redditnews.Datamodel.UsedData
-import com.example.redditnews.room.database
-import com.example.redditnews.room.entity
+import com.example.redditnews.room.DatabaseClass
+import com.example.redditnews.room.Entity
 import java.util.*
 
 class LocalDataModel {
@@ -20,7 +20,7 @@ class LocalDataModel {
         }
     }
     private fun getLocalDatabase() {
-        val mDatabase= database.getInstance(mFragment.requireContext())
+        val mDatabase= DatabaseClass.getInstance(mFragment.requireContext())
         var mEntry=mDatabase.mDao().getlist()
 
         for(m in mEntry)
@@ -36,7 +36,7 @@ class LocalDataModel {
         return mMutable
     }
     fun changeListToItems(it: List<UsedData>) {
-        var mDatabase= database.getInstance(mFragment.requireContext())
+        var mDatabase= DatabaseClass.getInstance(mFragment.requireContext())
         var id:Int=1
         for (ch in it) {
             Log.d("insert",id.toString())
@@ -50,14 +50,14 @@ class LocalDataModel {
 
     }
     fun insertIntoLocalDatabase(
-        mDatabase: database,
+        mDatabase: DatabaseClass,
         title: String,
         text: String,
         uri: String
     )
     {
         mDatabase.mDao().insertNews(
-            entity(
+            Entity(
 
                 title,
                 text,

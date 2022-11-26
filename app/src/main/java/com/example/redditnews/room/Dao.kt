@@ -9,11 +9,11 @@ import androidx.room.Query
 interface Dao {
 
     @Query("select * from news")
-    fun getlist():List<entity>
+    fun getlist():List<Entity>
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-     fun insertNews(entity: entity)
+     fun insertNews(entity: Entity)
 
 
 }
