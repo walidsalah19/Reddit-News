@@ -7,11 +7,7 @@ Retrofit
 
 Kotlin Corotuines
 
-job
-
 Room Database
-
-Observing your network connection with Flow
 
 Live Data
 
