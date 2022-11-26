@@ -5,8 +5,6 @@ MVVM Arch
 
 Retrofit
 
-Kotlin Corotuines
-
 Room Database
 
 Live Data
