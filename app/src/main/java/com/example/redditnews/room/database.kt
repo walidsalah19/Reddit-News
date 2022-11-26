@@ -9,15 +9,13 @@ abstract class database : RoomDatabase() {
     abstract fun mDao(): Dao
     companion object
        {
-           var mdatabase:database ?=null
 
            @Synchronized
-           fun getInstance(mCtx: Context): database ?{
-               if (mdatabase == null) {
-                   mdatabase = Room.databaseBuilder(mCtx.applicationContext,database::class.java,"news")
+           fun getInstance(mCtx: Context): database {
+                 var   mdatabase = Room.databaseBuilder(mCtx.applicationContext,database::class.java,"news")
                        .fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
                        .build()
-               }
                return mdatabase
            }
        }

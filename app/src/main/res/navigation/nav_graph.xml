@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.redditnews.UI.DisplayArtical"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_diaplayartical">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.redditnews.UI.ShowFullArtical"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_kotlin_news">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -12,7 +12,7 @@ interface Dao {
     fun getlist():List<entity>
 
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
      fun insertNews(entity: entity)
 
 
